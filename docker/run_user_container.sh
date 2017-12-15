@@ -22,9 +22,9 @@ fi
 # Check whether the container exists
 ################################################################################
 if [ "$(docker ps --quiet --filter name=$CONTAINER_NAME)" ]
+then
 	echo "The container $CONTAINER_NAME already exists"
 	exit 1
-then
 fi
 
 ################################################################################
