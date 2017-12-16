@@ -4,7 +4,7 @@
 ################################################################################
 # Set up the workspace
 ################################################################################
-# Specify the temporary directory
+# Specify the binary directory
 BIN_DIR="$HOME/bin"
 
 # Create the binary directory for executables
