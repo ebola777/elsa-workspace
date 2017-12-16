@@ -4,4 +4,4 @@ These automation scripts set up TensorFlow workspace described in [Docker for EL
 
 ## Getting Started
 
-1. Run `bash install_tensorflow.sh`
+1. Run `bash install_tensorflow.sh`, it will ask for root password in the process
