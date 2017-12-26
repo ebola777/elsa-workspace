@@ -33,3 +33,11 @@ RUN apt-get update && \
     wget \
     x11-apps \
     zip
+
+# Install Intel MKL
+RUN cd /tmp/ && \
+    git clone https://github.com/01org/mkl-dnn.git && \
+    cd mkl-dnn/scripts && ./prepare_mkl.sh && cd .. && \
+    mkdir -p build && cd build && cmake .. && make && \
+    sudo make install && \
+    rm -rf /tmp/mkl-dnn
