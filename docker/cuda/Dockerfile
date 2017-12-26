@@ -1,5 +1,4 @@
-ARG CUDA_TAG
-FROM nvidia/cuda:$CUDA_TAG
+FROM nvidia/cuda:9.0-cudnn7-devel
 LABEL name="cuda-drl"
 LABEL description="CUDA image for deep reinforcement learning for ELSA lab"
 LABEL authors="Shawn Chang <ebola777@yahoo.com.tw>"
