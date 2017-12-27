@@ -1,6 +1,8 @@
 ARG ORG_NAME
 ARG BASE_NAME
 FROM ${ORG_NAME}/${BASE_NAME}
+LABEL name="user"
+LABEL description="Creating an user for non-privileged access"
 LABEL authors="Shawn Chang <ebola777@yahoo.com.tw>"
 
 # Define the arguments
