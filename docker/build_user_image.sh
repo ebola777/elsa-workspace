@@ -5,9 +5,6 @@
 ################################################################################
 # Specify the constants
 ################################################################################
-# The organization
-ORG_NAME=shawnchang420
-
 # The image name
 IMAGE_NAME="$(whoami)/$BASE_NAME"
 

@@ -6,7 +6,7 @@
 # Specify the constants
 ################################################################################
 # The image name
-CONTAINER_NAME="$(whoami)"
+CONTAINER_NAME="$(whoami)/$BASE_NAME"
 
 ################################################################################
 # Check the environment variables
