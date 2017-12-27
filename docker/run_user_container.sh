@@ -40,4 +40,4 @@ docker run \
 	--volume=$HOME:$HOME \
 	--workdir=$HOME \
 	-it \
-	"$(whoami)/cuda"
+	"$(whoami)/$BASE_NAME"

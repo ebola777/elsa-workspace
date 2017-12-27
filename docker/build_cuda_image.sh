@@ -6,13 +6,10 @@
 # Specify the constants
 ################################################################################
 # The image name
-IMAGE_NAME=elsa/cuda
-
-# The tag of nvidia/cuda
-TAG=9.0-cudnn7-devel
+IMAGE_NAME=elsa/cuda-drl
 
 # The base name used for derived images
-BASE_NAME=cuda
+BASE_NAME=cuda-drl
 
 ################################################################################
 # Set up the workspace
@@ -38,11 +35,10 @@ fi
 # Build the new image
 ################################################################################
 # Go to the build directory
-cd "$SCRIPT_DIR/cuda"
+cd "$SCRIPT_DIR/cuda-drl"
 
 # Build the image
-docker build --tag="$IMAGE_NAME" \
-	--build-arg TAG="$TAG" .
+docker build --tag="$IMAGE_NAME"
 
 # Export the base name
 export BASE_NAME="$BASE_NAME"
