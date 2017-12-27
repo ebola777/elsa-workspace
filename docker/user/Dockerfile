@@ -1,6 +1,6 @@
 ARG BASE_NAME
 FROM elsa/$BASE_NAME
-MAINTAINER Shawn Chang, ebola777@yahoo.com.tw
+LABEL authors="Shawn Chang <ebola777@yahoo.com.tw>"
 
 # Define the arguments
 ARG USERNAME=elsa
