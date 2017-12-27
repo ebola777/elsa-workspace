@@ -3,10 +3,7 @@ LABEL name="cuda-drl"
 LABEL description="CUDA image for deep reinforcement learning for ELSA lab"
 LABEL authors="Shawn Chang <ebola777@yahoo.com.tw>"
 
-# Set the base name
-ENV BASE_NAME cuda
-
-# Install the packages
+# Install the packages for development
 RUN apt-get update && \
     apt-get -y install \
     build-essential \
@@ -35,6 +32,7 @@ RUN apt-get update && \
     zip
 
 # Install Intel MKL
+# Reference: https://github.com/mind/wheels#mkl
 RUN cd /tmp/ && \
     git clone https://github.com/01org/mkl-dnn.git && \
     cd mkl-dnn/scripts && ./prepare_mkl.sh && cd .. && \
