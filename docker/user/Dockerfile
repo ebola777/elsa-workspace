@@ -1,5 +1,6 @@
+ARG ORG_NAME
 ARG BASE_NAME
-FROM elsa/$BASE_NAME
+FROM ${ORG_NAME}/${BASE_NAME}
 LABEL authors="Shawn Chang <ebola777@yahoo.com.tw>"
 
 # Define the arguments

@@ -5,6 +5,9 @@
 ################################################################################
 # Specify the constants
 ################################################################################
+# The organization
+ORG_NAME=shawnchang420
+
 # The image name
 IMAGE_NAME="$(whoami)/$BASE_NAME"
 
@@ -52,6 +55,7 @@ cd "$SCRIPT_DIR/user"
 
 # Build the image
 docker build --tag="$IMAGE_NAME" \
+	--build-arg ORG_NAME="$ORG_NAME" \
 	--build-arg BASE_NAME="$BASE_NAME" \
 	--build-arg USERNAME="$USERNAME" \
 	--build-arg PASSWORD="$PASSWORD" \
