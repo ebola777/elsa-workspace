@@ -9,9 +9,10 @@
 CONTAINER_NAME="$(whoami)"
 
 ################################################################################
-# Check the base name
+# Check the environment variables
 # Reference: https://stackoverflow.com/a/307540
 ################################################################################
+# Check the base name
 if [ -z "$BASE_NAME" ]
 then
 	echo '$BASE_NAME should be set'
