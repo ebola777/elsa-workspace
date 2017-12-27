@@ -28,9 +28,17 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 WORKING_DIR="$PWD"
 
 ################################################################################
-# Check the base name
+# Check the environment variables
 # Reference: https://stackoverflow.com/a/307540
 ################################################################################
+# Check the organization name
+if [ -z "$ORG_NAME" ]
+then
+	echo '$ORG_NAME should be set'
+	exit 1
+fi
+
+# Check the base name
 if [ -z "$BASE_NAME" ]
 then
 	echo '$BASE_NAME should be set'
