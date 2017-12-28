@@ -6,7 +6,7 @@
 # Specify the constants
 ################################################################################
 # The container name
-CONTAINER_NAME="$(whoami)/$REPO_NAME/$TAG"
+CONTAINER_NAME="$(whoami).$REPO_NAME.$TAG"
 
 ################################################################################
 # Check the environment variables
