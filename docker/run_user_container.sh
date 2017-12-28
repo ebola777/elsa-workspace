@@ -43,6 +43,7 @@ fi
 ################################################################################
 docker run \
 	--env CONTAINER_REPO_NAME="$REPO_NAME" \
+	--env CONTAINER_TAG="$TAG" \
 	--env="DISPLAY" \
 	--name="$CONTAINER_NAME" \
 	--net=host \
