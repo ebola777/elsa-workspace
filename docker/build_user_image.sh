@@ -6,7 +6,7 @@
 # Specify the constants
 ################################################################################
 # The image name
-IMAGE_NAME="$(whoami)/$BASE_NAME"
+IMAGE_NAME="$(whoami)/$REPO_NAME:$TAG"
 
 # The user name
 USERNAME="$(whoami)"
@@ -28,17 +28,24 @@ WORKING_DIR="$PWD"
 # Check the environment variables
 # Reference: https://stackoverflow.com/a/307540
 ################################################################################
-# Check the organization name
-if [ -z "$ORG_NAME" ]
+# Check the hub user
+if [ -z "$HUB_USER" ]
 then
-	echo '$ORG_NAME should be set'
+	echo '$HUB_USER should be set'
 	exit 1
 fi
 
-# Check the base name
-if [ -z "$BASE_NAME" ]
+# Check the repository name
+if [ -z "$REPO_NAME" ]
 then
-	echo '$BASE_NAME should be set'
+	echo '$REPO_NAME should be set'
+	exit 1
+fi
+
+# Check the tag
+if [ -z "$TAG" ]
+then
+	echo '$TAG should be set'
 	exit 1
 fi
 
@@ -60,8 +67,9 @@ cd "$SCRIPT_DIR/user"
 
 # Build the image
 docker build --tag="$IMAGE_NAME" \
-	--build-arg ORG_NAME="$ORG_NAME" \
-	--build-arg BASE_NAME="$BASE_NAME" \
+	--build-arg HUB_USER="$HUB_USER" \
+	--build-arg REPO_NAME="$REPO_NAME" \
+	--build-arg TAG="$TAG" \
 	--build-arg USERNAME="$USERNAME" \
 	--build-arg PASSWORD="$PASSWORD" \
 	--build-arg UID="$(id -u)" .

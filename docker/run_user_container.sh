@@ -6,16 +6,26 @@
 # Specify the constants
 ################################################################################
 # The image name
-CONTAINER_NAME="$(whoami)/$BASE_NAME"
+IMAGE_NAME="$(whoami)/$REPO_NAME:$TAG"
+
+# The container name
+CONTAINER_NAME="$(whoami)/$REPO_NAME/$TAG"
 
 ################################################################################
 # Check the environment variables
 # Reference: https://stackoverflow.com/a/307540
 ################################################################################
-# Check the base name
-if [ -z "$BASE_NAME" ]
+# Check the repository name
+if [ -z "$REPO_NAME" ]
 then
-	echo '$BASE_NAME should be set'
+	echo '$REPO_NAME should be set'
+	exit 1
+fi
+
+# Check the tag
+if [ -z "$TAG" ]
+then
+	echo '$TAG should be set'
 	exit 1
 fi
 
@@ -32,7 +42,7 @@ fi
 # Run the container
 ################################################################################
 docker run \
-	--env CONTAINER_BASE_NAME="$BASE_NAME" \
+	--env CONTAINER_REPO_NAME="$REPO_NAME" \
 	--env="DISPLAY" \
 	--name="$CONTAINER_NAME" \
 	--net=host \
@@ -41,4 +51,4 @@ docker run \
 	--volume=$HOME:$HOME \
 	--workdir=$HOME \
 	-it \
-	"$(whoami)/$BASE_NAME"
+	"$IMAGE_NAME"

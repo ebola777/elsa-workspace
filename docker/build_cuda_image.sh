@@ -6,10 +6,10 @@
 # Specify the constants
 ################################################################################
 # The image name
-IMAGE_NAME=elsa/cuda-drl
+IMAGE_NAME=cuda-drl
 
-# The base name used for derived images
-BASE_NAME=cuda-drl
+# The repository name for exporting
+REPO_NAME=cuda-drl
 
 ################################################################################
 # Set up the workspace
@@ -38,10 +38,10 @@ fi
 cd "$SCRIPT_DIR/cuda-drl"
 
 # Build the image
-docker build --tag="$IMAGE_NAME"
+docker build --tag="$IMAGE_NAME" .
 
-# Export the base name
-export BASE_NAME="$BASE_NAME"
+# Export the repository name
+export REPO_NAME="$REPO_NAME"
 
 ################################################################################
 # Clean up
