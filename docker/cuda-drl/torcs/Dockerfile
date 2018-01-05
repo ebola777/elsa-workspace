@@ -8,7 +8,7 @@ LABEL authors="Shawn Chang <ebola777@yahoo.com.tw>"
 # Reference: https://github.com/ugo-nama-kun/gym_torcs/tree/master/vtorcs-RL-color
 ################################################################################
 # Install the dependencies
-RUN apt-get -y install \
+RUN apt -y install \
     libglib2.0-dev \
     libgl1-mesa-dev \
     libglu1-mesa-dev \

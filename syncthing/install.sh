@@ -5,7 +5,7 @@
 # Install packages for accessing metadata and packages over https
 # Reference: https://apt.syncthing.net/
 ################################################################################
-sudo apt-get install -y apt-transport-https
+sudo apt -y install apt-transport-https
 
 ################################################################################
 # Install Syncthing
@@ -18,5 +18,5 @@ curl -s https://syncthing.net/release-key.txt | sudo apt-key add -
 echo "deb https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
 
 # Update and install syncthing:
-sudo apt-get update
-sudo apt-get -y install syncthing
+sudo apt update
+sudo apt -y install syncthing

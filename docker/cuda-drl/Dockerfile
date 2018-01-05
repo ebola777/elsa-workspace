@@ -4,8 +4,8 @@ LABEL description="CUDA image for deep reinforcement learning for ELSA lab"
 LABEL authors="Shawn Chang <ebola777@yahoo.com.tw>"
 
 # Install the packages for development
-RUN apt-get update && \
-    apt-get -y install \
+RUN apt update && \
+    apt -y install \
     build-essential \
     cmake \
     curl \
